@@ -1,0 +1,45 @@
+{
+    "name": "tobento/service-iterable",
+    "type": "library",
+    "description": "Iterables and iterators",
+    "keywords": [
+        "tobento",
+        "package",
+        "PHP",
+        "iterable",
+        "iterator"
+    ],
+    "homepage": "https://www.tobento.ch",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tobias Strub",
+            "email": "info@tobento.ch",
+            "homepage": "https://www.tobento.ch"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.0",
+        "tobento/service-filesystem": "^1.0"
+    },  
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tobento\\Service\\Iterable\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tobento\\Service\\Iterable\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --testdox --colors=always",
+        "psalm": "vendor/bin/psalm"
+    }
+}
