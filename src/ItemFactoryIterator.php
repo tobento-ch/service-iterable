@@ -16,7 +16,7 @@ namespace Tobento\Service\Iterable;
 use Iterator;
 
 /**
- * ItemFactoryIterator
+ * @implements Iterator<array-key, mixed>
  */
 class ItemFactoryIterator implements Iterator
 {
@@ -43,27 +43,27 @@ class ItemFactoryIterator implements Iterator
         $this->factory = $factory;
     }
     
-    public function rewind()
+    public function rewind(): void
     {
         $this->position = 0;
     }
 
-    public function current()
+    public function current(): mixed
     {
         return call_user_func($this->factory);
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->position;
     }
 
-    public function next()
+    public function next(): void
     {
         ++$this->position;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return $this->position < $this->create;
     }

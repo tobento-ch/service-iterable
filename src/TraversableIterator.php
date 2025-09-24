@@ -19,7 +19,7 @@ use IteratorIterator;
 use Traversable;
 
 /**
- * TraversableIterator
+ * @implements Iterator<array-key, mixed>
  */
 class TraversableIterator implements Iterator
 {
@@ -57,28 +57,28 @@ class TraversableIterator implements Iterator
         return new IteratorIterator($this->traversable);
     }
     
-    public function rewind()
+    public function rewind(): void
     {
         $this->innerIterator = $this->createInnerIterator();
         $this->innerIterator->rewind();
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->innerIterator->current();
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->innerIterator->key();
     }
 
-    public function next()
+    public function next(): void
     {
         $this->innerIterator->next();
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return $this->innerIterator->valid();
     }
