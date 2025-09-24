@@ -18,7 +18,7 @@ use Iterator;
 use Generator;
 
 /**
- * ChunkIterator
+ * @implements IteratorAggregate<array-key, mixed>
  */
 class ChunkIterator implements IteratorAggregate
 {
