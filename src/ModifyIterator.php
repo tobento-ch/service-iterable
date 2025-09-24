@@ -16,7 +16,7 @@ namespace Tobento\Service\Iterable;
 use Iterator;
 
 /**
- * ModifyIterator
+ * @implements Iterator<array-key, mixed>
  */
 class ModifyIterator implements Iterator
 {
@@ -44,28 +44,28 @@ class ModifyIterator implements Iterator
         $this->modifier = $modifier;
     }
     
-    public function rewind()
+    public function rewind(): void
     {
         $this->iterator->rewind();
     }
 
-    public function current()
+    public function current(): mixed
     {
         $callable = $this->modifier;
         return $callable($this->iterator->current());
     }
 
-    public function key()
+    public function key(): mixed
     {
         return $this->iterator->key();
     }
 
-    public function next()
+    public function next(): void
     {
         $this->iterator->next();
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return $this->iterator->valid();
     }

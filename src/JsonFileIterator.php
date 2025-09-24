@@ -19,7 +19,7 @@ use ArrayIterator;
 use Traversable;
 
 /**
- * JsonFileIterator
+ * @implements IteratorAggregate<array-key, mixed>
  */
 class JsonFileIterator implements IteratorAggregate
 {
@@ -35,7 +35,7 @@ class JsonFileIterator implements IteratorAggregate
     /**
      * Returns the iterator.
      *
-     * @return Traversable
+     * @return Traversable<array-key, mixed>
      */
     public function getIterator(): Traversable
     {
